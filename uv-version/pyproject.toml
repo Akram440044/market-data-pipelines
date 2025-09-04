@@ -1,0 +1,96 @@
+[project]
+name = "market-data-pipeline"
+version = "1.0.0"
+description = "A comprehensive market data pipeline for quantitative finance"
+authors = [
+    { name = "Quantitative Developer", email = "dev@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["finance", "quantitative", "market-data", "trading", "technical-analysis"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "pandas>=1.5.0",
+    "numpy>=1.21.0",
+    "yfinance>=0.2.18",
+    "pyyaml>=6.0",
+    "jinja2>=3.0.0",
+]
+
+[project.optional-dependencies]
+analysis = [
+    "scipy>=1.9.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+]
+technical = [
+    "ta-lib>=0.4.25",
+    "quantlib>=1.29",
+]
+database = [
+    "sqlalchemy>=1.4.0",
+    "psycopg2-binary>=2.9.0",
+    "pymongo>=4.0.0",
+]
+performance = [
+    "numba>=0.56.0",
+]
+logging = [
+    "loguru>=0.6.0",
+]
+validation = [
+    "pydantic>=1.10.0",
+]
+all = [
+    "scipy>=1.9.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "loguru>=0.6.0",
+    "numba>=0.56.0",
+    "pydantic>=1.10.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/market-data-pipeline"
+Repository = "https://github.com/your-username/market-data-pipeline"
+Issues = "https://github.com/your-username/market-data-pipeline/issues"
+Documentation = "https://github.com/your-username/market-data-pipeline#readme"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
